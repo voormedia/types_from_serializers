@@ -313,8 +313,7 @@ module TypesFromSerializers
     # Internal: Checks if it should avoid generating an interface.
     def skip_serializer?(serializer)
       serializer.name.in?(config.base_serializers) ||
-        config.skip_serializer_if.call(serializer) ||
-        serializer.ts_name.include?("Serializer")
+        config.skip_serializer_if.call(serializer)
     end
 
     # Internal: Returns an object compatible with FileUpdateChecker.
