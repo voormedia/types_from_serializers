@@ -314,7 +314,6 @@ module TypesFromSerializers
     def skip_serializer?(serializer)
       serializer.name.in?(config.base_serializers) ||
         config.skip_serializer_if.call(serializer) ||
-        # NOTE: Ignore inline serializers.
         serializer.ts_name.include?("Serializer")
     end
 
